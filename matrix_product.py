@@ -1,3 +1,33 @@
+def function(left_array, left_shape, right_array, right_shape, mul_func, out):
+    left_len = len (left_array)
+    right_len = len(right_array)
+    left_shape_len = len(left_shape)
+    right_shape_len = len(right_shape)
+    left_sw = 2 // (left_shape_len + 1)
+    right_sw = 2 // (right_shape_len + 1)
+    row = left_shape[-1 -1 % left_shape_len] * (1 - left_sw) + left_sw
+    col = right_shape[-1] * (1 - right_sw) + right_sw
+
+    matrix2d = col * row
+
+    right_matrix = col * right_shape[-1 -1 % right_shape_len]
+
+    product_max = left_shape[-1]
+
+    step_max = len(out)
+    step = 0
+    while(step < step_max):
+        left_product_step = step // col * product_max
+        right_product_step = step // matrix2d * right_matrix + step % col
+
+        product_step = 0
+        out[step] = 0
+        while(product_step < product_max):
+            out[step] += mul_func(left_array[(left_product_step + product_step) % left_len],right_array[(right_product_step + product_step * col) % right_len])d
+            product_step += 1
+        step += 1
+    return None
+
 def matmul(left_array, left_shape, right_array, right_shape, out):
     left_len = len (left_array)
     right_len = len(right_array)
