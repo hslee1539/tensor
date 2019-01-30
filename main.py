@@ -3,7 +3,7 @@ import matrix_product
 import transpose as transpose_module
 import axis_module
 import tool
-import class_tensor
+from class_tensor import *
 
 
 def create_element_wise_product(left, right, dtype = float, stype = int):
