@@ -21,14 +21,15 @@ class Tensor:
         return Tensor(self.array.copy(), self.shape.copy())
 
 
-def create_randomly(shape):
+def create_randomly(shape, mean = 0.0, size = 1.0):
+    mean -= 0.5
     array_len = 1
     for i in range(len(shape)):
         array_len *= shape[i]
 
     array = [None] * array_len
     for i in range(array_len):
-        array[i] = _rd.random() * 2 - 1
+        array[i] = _rd.random() * size + mean
     
     return Tensor(array, shape)
 
@@ -51,3 +52,15 @@ def create_arange(start, end, step = 1):
     for i in range(length):
         array[i] = start + step * i
     return Tensor(array, [length])
+
+def create_gauss(shape, mean = 0.0, deviation = 1.0):
+    array_len = 1
+    for i in range(len(shape)):
+        array_len *= shape[i]
+
+    array = [None] * array_len
+    for i in range(array_len):
+        array[i] = _rd.gauss(mean, deviation)
+    
+    return Tensor(array, shape)
+    
