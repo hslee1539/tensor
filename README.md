@@ -25,7 +25,7 @@ Tensor(array, shape)À¸·Î °´Ã¼¸¦ ¸¸µé°í, array¿Í shapeÀº ¸ğµÎ 1Â÷¿ø ¹è¿­ÀÌ ¿Í¾ß Ç
 ¿¬»êÇÒ ¶§´Â ¹İµå½Ã ÀúÀåÇÒ °÷À» ¸¸µé¾î¼­ ¿¬»êÀ» ÇÔ.
 
 ¿¹)
-~~~
+~~~python
 import tensor
 #2by2
 left = tensor.Tensor([1,2,3,4], [2,2]) # array¿Í shapeÀº ¸ğµÎ 1Â÷¿ø ¹è¿­·Î ÀúÀå.
@@ -42,7 +42,7 @@ tensor.matmul(left, right, result) # ³»ºÎÀûÀ¸·Î °è»êµµ 1Â÷¿øÀûÀ¸·Î °è»êÇÔ.
 ¸¸¾à C = A + B + 1À» ÇÒ ¶§, ¹İº¹¹®ÀÌ A + B¿Í (A + B) + 1¸¦ ÇÏ¸é¼­ 2¹ø ¹İº¹µÇ´Âµ¥, ÀÌ¸¦ functionÀ» ÅëÇØ ¾Æ·¡ÀÇ ¹æ¹ıÀ¸·Î ÇØ°á °¡´ÉÇÔ.
 
 ¿¹)
-~~~
+~~~python
 import tensor
 #2by2
 left = tensor.Tensor([1,2,3,4], [2,2])
