@@ -1,4 +1,4 @@
-import tostring as _tostring
+from . import tostring as _tostring
 import random as _random
 
 _rd = _random.Random()
