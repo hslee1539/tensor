@@ -28,13 +28,13 @@ Tensor(array, shape)À¸·Î °´Ã¼¸¦ ¸¸µé°í, array¿Í shapeÀº ¸ğµÎ 1Â÷¿ø ¹è¿­ÀÌ ¿Í¾ß Ç
 ~~~python
 import tensor
 #2by2
-left = tensor.Tensor([1,2,3,4], [2,2]) # array¿Í shapeÀº ¸ğµÎ 1Â÷¿ø ¹è¿­·Î ÀúÀå.
+left = tensor.Tensor([1,2,3,4], [2,2]) #array¿Í shapeÀº ¸ğµÎ 1Â÷¿ø ¹è¿­·Î ÀúÀå.
 #2by1
 right = tensor.Tensor([5,6], [2,1])
 #2by1
 result = tensor.create_matrix_product( left, right ) # ¹İµå½Ã ¿¬»ê °á°ú¸¦ ÀúÀåÇÒ °ø°£À» ¸¸µé¾î¾ß ÇÔ. (°´Ã¼ »ı¼ºÀ» ¸í½ÃÀûÀ¸·Î ÇÏ±â À§ÇØ¼­)
 
-tensor.matmul(left, right, result) # ³»ºÎÀûÀ¸·Î °è»êµµ 1Â÷¿øÀûÀ¸·Î °è»êÇÔ.
+tensor.matmul(left, right, result) #³»ºÎÀûÀ¸·Î °è»êµµ 1Â÷¿øÀûÀ¸·Î °è»êÇÔ.
 #or
 #result = tensor.matmul(left, right, result)
 ~~~
@@ -51,10 +51,10 @@ right = tensor.Tensor([5,6], [2])
 #2by2
 result = tensor.create_element_wise_product( left, right )
 
-# C = A + B¸¦ ÇÏ¸é¼­ °°Àº ·çÇÁ¿¡ +1±îÁö °°ÀÌ ÇÏ±â À§ÇÑ ÄÚµå
+#C = A + B¸¦ ÇÏ¸é¼­ °°Àº ·çÇÁ¿¡ +1±îÁö °°ÀÌ ÇÏ±â À§ÇÑ ÄÚµå
 def customized_add( left, right ):
 	return left + right + 1
 
-# 3¹øÂ° ÀÎ¼ö¿¡ ÇÔ¼ö¸¦ ³Ñ±èÀ¸·Î ½á, ·çÇÁ ÇÑ¹ø¿¡ °è»êÀ» ÇÔ.
+#3¹øÂ° ÀÎ¼ö¿¡ ÇÔ¼ö¸¦ ³Ñ±èÀ¸·Î ½á, ·çÇÁ ÇÑ¹ø¿¡ °è»êÀ» ÇÔ.
 tensor.function_element_wise(left, right, customized_add, result)
 ~~~
