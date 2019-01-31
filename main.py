@@ -1,10 +1,6 @@
-import element_wise_product
-import matrix_product
-import transpose as transpose_module
-import axis_module
-import tool
+from computing import *
 from class_tensor import *
-
+import tool
 
 def create_element_wise_product(left, right, dtype = float, stype = int):
     array, shape = element_wise_product.create_variables(left.array, left.shape, right.array, right.shape)

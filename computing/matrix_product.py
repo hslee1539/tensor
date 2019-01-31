@@ -23,7 +23,7 @@ def function(left_array, left_shape, right_array, right_shape, mul_func, out):
         product_step = 0
         out[step] = 0
         while(product_step < product_max):
-            out[step] += mul_func(left_array[(left_product_step + product_step) % left_len],right_array[(right_product_step + product_step * col) % right_len])d
+            out[step] += mul_func(left_array[(left_product_step + product_step) % left_len],right_array[(right_product_step + product_step * col) % right_len])
             product_step += 1
         step += 1
     return None
