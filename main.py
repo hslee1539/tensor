@@ -63,7 +63,7 @@ def function(tensor, func, out):
         out.array[i] = func(tensor.array[i])
     return out
 
-def function_elment_wise(left, right, func, out):
+def function_element_wise(left, right, func, out):
     element_wise_product.function(left.array, right.array, func,out.array)
     return out
 
