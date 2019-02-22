@@ -21,7 +21,7 @@ class Tensor:
         return Tensor(self.array.copy(), self.shape.copy())
 
 
-def create_randomly(shape, mean = 0.0, size = 1.0):
+def create_randomly(shape, mean = 0.0, size = 1.0, dtype = float):
     mean -= 0.5
     array_len = 1
     for i in range(len(shape)):
@@ -29,7 +29,7 @@ def create_randomly(shape, mean = 0.0, size = 1.0):
 
     array = [None] * array_len
     for i in range(array_len):
-        array[i] = _rd.random() * size + mean
+        array[i] = dtype(_rd.random() * size + mean)
     
     return Tensor(array, shape)
 
