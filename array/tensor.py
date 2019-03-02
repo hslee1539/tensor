@@ -13,8 +13,9 @@ class Tensor:
     def __str__(self):
         return _tostring.tostring(self.array, self.shape)
 
-    def __repr__(self):
-        return _tostring.tostring(self.array, self.shape)
+    #랙의 주범1
+    #def __repr__(self):
+        #return _tostring.tostring(self.array, self.shape)
 
     def copy(self):
         """이 객체를 깊은 복사로 복사합니다."""

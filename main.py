@@ -2,6 +2,7 @@ from .computing import *
 from .array.tensor import *
 from . import tool
 
+
 def create_element_wise_product(left, right, dtype = float, stype = int):
     array, shape = element_wise_product.create_variables(left.array, left.shape, right.array, right.shape)
     return Tensor(array,shape)
@@ -86,3 +87,8 @@ def copy_row(source, point, out):
 def set_shuffle(out):
     tool.set_shuffle(out.array)
     return out
+
+def change_type(tensor, type):
+    for i in range(len(tensor.array)):
+        tensor.array[i] = type(tensor.array[i])
+    return tensor

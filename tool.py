@@ -15,7 +15,7 @@ def copy(source_array, start, length, out_array):
 
 
 
-def copy_row(source_array, source_shape, point_array, out_array):
+def copy_row_(source_array, source_shape, point_array, out_array):
     column = source_shape[-1]
     source_row = len(source_array) // column
     out_row = len(out_array) // column
@@ -24,3 +24,12 @@ def copy_row(source_array, source_shape, point_array, out_array):
         choice = point_array[r]
         for c in range(column):
             out_array[r * column + c] = source_array[choice * column + c]
+
+def copy_row(source_array, source_shape, point_array, out_array):
+    col = len(source_array) // source_shape[0]
+    row = len(out_array) // source_shape[0]
+
+    for r in range(row):
+        choice = point_array[r]
+        for c in range(col):
+            out_array[r * col + c] = source_array[choice * col + c]
